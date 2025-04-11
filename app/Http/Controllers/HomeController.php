@@ -8,9 +8,14 @@ use App\Models\Doctor;
 
 class HomeController extends Controller
 {
-    public function index(){
-        $doctor= doctor::all();
-        return view('user.dashboard', compact('doctor'));
+    public function index()
+    {
+        if (Auth::id()) {
+            return redirect('home');
+        } else {
+            $doctor = doctor::all();
+            return view('user.dashboard', compact('doctor'));
+        }
     }
     public function redirect()
     {
@@ -18,11 +23,14 @@ class HomeController extends Controller
             if (Auth::user()->usertype == '0') {
                 return view('admin.dashboard');
 
-            }
-            else{
+            } else {
 
-                $doctor= doctor::all();
-                return view('user.dashboard', compact('doctor'));
+                if (Auth::id()) {
+                    return redirect('home');
+                } else {
+                    $doctor = doctor::all();
+                    return view('user.dashboard', compact('doctor'));
+                }
             }
 
         } else {
