@@ -40,15 +40,15 @@
           @csrf
           <div style="padding: 15px">
             <label for="">Doctor's Name</label>
-            <input type="text" name="name" placeholder="Enter Doctor's Name" style="color: black" required>
+            <input type="text" name="name" placeholder="Doctor's Name" style="color: black" required>
           </div>
           <div style="padding: 15px">
             <label for="">Phone Numebr</label>
-            <input type="text" name="phone" placeholder="Enter Doctor's Phone Number" style="color: black" required>
+            <input type="text" name="phone" placeholder="Doctor's Phone Number" style="color: black" required>
           </div>
           <div style="padding: 15px">
             <label for="">Email</label>
-            <input type="email" name="email" placeholder="Enter Doctor's Email" style="color: black" required>
+            <input type="email" name="email" placeholder="Doctor's Email" style="color: black" required>
           </div>
           <div style="padding: 15px">
             <label for="">Doctor's Speciality</label>
@@ -72,7 +72,7 @@
           </div>
           <div style="padding: 15px">
             <label for="">Room Numebr</label>
-            <input type="text" name="room" placeholder="Enter Doctor's Room Number" style="color: black" required>
+            <input type="text" name="room" placeholder="Doctor's Room Number" style="color: black" required>
           </div>
           <div style="padding: 15px">
             <label for="">Doctor's Photo</label>

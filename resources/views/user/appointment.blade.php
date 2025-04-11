@@ -1,8 +1,17 @@
 <div class="page-section">
     <div class="container">
+        @if(session()->has('message'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ session()->get('message') }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      @endif
         <h1 class="text-center wow fadeInUp">Make an Appointment</h1>
 
-        <form class="main-form">
+        <form class="main-form" action="{{url('appointment')}}" method="POST">
+            @csrf
             <div class="row mt-5 ">
                 <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
                     <input type="text" name="name" class="form-control" placeholder="Full name" required>

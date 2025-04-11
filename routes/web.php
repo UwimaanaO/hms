@@ -26,3 +26,5 @@ Route::middleware([
 });
 Route::get('/add_doctor',[AdminController::class,'add_doctor']);
 Route::post('/upload_doctor',[AdminController::class,'upload_doctor']);
+Route::post('/appointment',[HomeController::class,'appointment']);
+Route::get('/myappointment',[HomeController::class,'myappointment']);

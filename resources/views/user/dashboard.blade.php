@@ -89,6 +89,9 @@
                         @if(Route::has('login'))
                             @auth
                                 <li class="nav-item" style="padding-right: 10px">
+                                    <a class="nav-link" href="{{url('myappointment')}}" style="background-color: greenyellow;">My Appointments</a>
+                                </li>
+                                <li class="nav-item" style="padding-right: 10px">
                                     <a class="btn btn-primary" href="{{ route('profile.show') }}">{{ Auth::user()->name }}</a>
                                 </li>
 
@@ -174,10 +177,11 @@
     <!--Doctors information-->
     @include('user.doctor')
     <!-- .Latest news page-section -->
-    @include('user.latest_news')    <!-- .Make an appointment section -->
+    @include('user.latest_news') <!-- .Make an appointment section -->
     @include('user.appointment')
 
-    <div class="page-section banner-home bg-image" style="background-image: url(../user/assets/img/banner-pattern.svg);">
+    <div class="page-section banner-home bg-image"
+        style="background-image: url(../user/assets/img/banner-pattern.svg);">
         <div class="container py-5 py-lg-0">
             <div class="row align-items-center">
                 <div class="col-lg-4 wow zoomIn">
