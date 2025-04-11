@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Doctor;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('user.dashboard');
+        $doctor= doctor::all();
+        return view('user.dashboard', compact('doctor'));
     }
     public function redirect()
     {
@@ -18,7 +20,9 @@ class HomeController extends Controller
 
             }
             else{
-                return view('user.dashboard');
+
+                $doctor= doctor::all();
+                return view('user.dashboard', compact('doctor'));
             }
 
         } else {
