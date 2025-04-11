@@ -8,11 +8,12 @@
   <title>Admin Page</title>
   @include('admin.css')
   <style>
-    label{
+    label {
       display: inline-block;
       width: 200px;
     }
-    input{
+
+    input {
       width: 200px;
     }
   </style>
@@ -27,6 +28,14 @@
     <!-- incude body-->
     <div class="container-fluid page-body-wrapper">
       <div class="container" align="center" style="padding-top: 100px">
+        @if(session()->has('message'))
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session()->get('message') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    @endif
         <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
           @csrf
           <div style="padding: 15px">
@@ -72,7 +81,6 @@
           <div style="padding: 15px">
             <input type="submit" class="btn btn-success">
           </div>
-
         </form>
       </div>
     </div>

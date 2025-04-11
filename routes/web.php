@@ -25,3 +25,4 @@ Route::middleware([
     })->name('admin.dashboard');
 });
 Route::get('/add_doctor',[AdminController::class,'add_doctor']);
+Route::post('/upload_doctor',[AdminController::class,'upload_doctor']);
