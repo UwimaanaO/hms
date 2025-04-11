@@ -27,19 +27,23 @@
     <!-- incude body-->
     <div class="container-fluid page-body-wrapper">
       <div class="container" align="center" style="padding-top: 100px">
-        <form action="">
+        <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
           @csrf
           <div style="padding: 15px">
             <label for="">Doctor's Name</label>
-            <input type="text" name="name" placeholder="Enter Doctor's Name" style="color: black">
+            <input type="text" name="name" placeholder="Enter Doctor's Name" style="color: black" required>
           </div>
           <div style="padding: 15px">
             <label for="">Phone Numebr</label>
-            <input type="text" name="phone" placeholder="Enter Doctor's Phone Number" style="color: black">
+            <input type="text" name="phone" placeholder="Enter Doctor's Phone Number" style="color: black" required>
+          </div>
+          <div style="padding: 15px">
+            <label for="">Email</label>
+            <input type="email" name="email" placeholder="Enter Doctor's Email" style="color: black" required>
           </div>
           <div style="padding: 15px">
             <label for="">Doctor's Speciality</label>
-            <select name="speciality" id="" style="width: 200px">
+            <select name="speciality" id="" style="width: 200px" required>
               <option value="">--Select--</option>
               <option value="Primary Care">Primary Care</option>
               <option value="Pediatrics">Pediatrics</option>
@@ -59,11 +63,11 @@
           </div>
           <div style="padding: 15px">
             <label for="">Room Numebr</label>
-            <input type="text" name="room" placeholder="Enter Doctor's Room Number" style="color: black">
+            <input type="text" name="room" placeholder="Enter Doctor's Room Number" style="color: black" required>
           </div>
           <div style="padding: 15px">
             <label for="">Doctor's Photo</label>
-            <input type="file" name="photo">
+            <input type="file" name="photo" required>
           </div>
           <div style="padding: 15px">
             <input type="submit" class="btn btn-success">
